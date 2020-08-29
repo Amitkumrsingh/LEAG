@@ -1,5 +1,5 @@
 {
-  "name": "englean",
+  "name": "englearn",
   "version": "1.0.0",
   "description": "A english learning platform where you can interact with people like you.",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "Englean"
+    "url": "Englearn"
   },
   "author": "Amit kumar",
   "license": "MIT",
