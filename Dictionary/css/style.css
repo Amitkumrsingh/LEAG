@@ -1,0 +1,227 @@
+
+/* Global Styles */
+:root {
+    --box-shadow-color: #9c9c9c;
+    --primary-color: #067d79;
+    --dark-color: #000000;
+    --light-color: #f4f4f4;
+    --danger-color: #dc3545;
+    --success-color: #28a745;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family:sans-serif;
+    background-color:var(--light-color);
+    color: #333;
+  }
+  
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+  
+  ul {
+    list-style: none;
+  }
+
+  .bg-dark{
+    background: var(--dark-color);
+    color: #fff;
+  }
+/* Utilities */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+  }
+  /* Text Styles*/
+
+  
+  .large {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .lead {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .text-primary {
+    color: var(--primary-color);
+  }
+  
+  .text-dark {
+    color: var(--dark-color);
+  }
+  
+
+/* Navbar */
+.navbar-1 {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Montserrat', sans-serif;
+
+    align-items: center;
+    padding: 0.7rem 2rem;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+    border-bottom: solid 1px var(--primary-color);
+    opacity: 1;
+  }
+  
+  .navbar-1 ul {
+    display: flex;
+  }
+  
+  .navbar-1 a {
+    color:var(--light-color);
+    padding: 0.5rem;
+    margin: 0 0.25rem;
+    text-decoration: none;
+  }
+  
+  .navbar-1 a:hover {
+    color: var(--primary-color);
+  }
+  
+  .navbar-1 .welcome span {
+    margin-right: 0.6rem;
+  }
+
+section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+section .searchForm  {
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 0px 0px;
+    margin: 40px 0px 15px 0px;
+}
+
+section .searchForm input[type=search] {
+    min-width: 700px;
+    margin: 1rem 1rem;
+    padding: 1rem 1rem;
+    background-color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+    box-shadow: 2px 2px 8px var(--box-shadow-color);
+    transition: box-shadow 0.3s;
+}
+
+section .searchForm input[type=search]:hover {
+    box-shadow: 5px 5px 10px var(--box-shadow-color);
+}
+
+section .searchForm input[type=search]:focus {
+    box-shadow: 5px 5px 10px var(--box-shadow-color);
+}
+
+section .searchForm input[type=button] {
+    margin:  1rem;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    box-shadow: 10px 10px 15px #a8a8a8;
+    transition: box-shadow 0.5s;
+    outline: none;
+}
+
+section .searchForm input[type=button]:hover {
+    box-shadow: 5px 5px 15px #aaa;
+    background-color: var(--primary-color);
+}
+
+
+
+
+section .searchResult {
+    visibility: hidden;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    margin: 1rem 10rem;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+section .searchResult div h1 {
+   font-size: 2rem;
+   margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+section .searchResult div p {
+    font-size: 1rem;
+}
+
+/* Mobile Styles */
+@media (max-width: 700px) {
+
+    .container {
+        max-width: 500px;
+        margin: 3rem;
+        padding: 2rem;
+        
+      }
+    .navbar-1 {
+      display: block;
+      text-align: center;
+    }
+  
+    .navbar-1 ul {
+      text-align: center;
+      justify-content: center;
+    }
+  
+    .navbar-1 h1 {
+      margin-bottom: 1rem;
+    }
+  
+    .navbar-1 .welcome {
+      display: none;
+    }
+  
+ section .searchForm{
+display: flex;
+flex-direction: column;
+}
+section .searchForm input[type=search] {
+    min-width: 200px;
+}
+
+  }
