@@ -194,7 +194,7 @@ section .searchResult div p {
 
     .container {
         max-width: 500px;
-        margin: 0;
+        margin-top: 1rem;
         padding: 2rem;
         
       }
