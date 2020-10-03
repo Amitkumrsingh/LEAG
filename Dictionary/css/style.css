@@ -190,11 +190,11 @@ section .searchResult div p {
 }
 
 /* Mobile Styles */
-@media (max-width: 700px) {
+@media (max-width: 760px) {
 
     .container {
         max-width: 500px;
-        margin: 3rem;
+        margin: 0;
         padding: 2rem;
         
       }
