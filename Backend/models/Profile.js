@@ -24,7 +24,7 @@ const ProfileSchema = new mongoose.Schema({
             degree:{
                 type:String,
                 required:true
-            },
+            }, 
             fieldofstudy:{
                 type:String,
                 required:true

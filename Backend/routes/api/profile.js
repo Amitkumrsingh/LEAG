@@ -6,6 +6,9 @@ const {check, validationResult} = require('express-validator');
 
 const User = require('../../models/User');
 const Profile = require('../../models/Profile');
+
+const Post = require('../../models/Post');
+
 // @route   GET api/profile/me
 // @desc    Get  current users profile
 // @access  Private
@@ -46,9 +49,11 @@ const {
     location,
     bio,
     status,
-    linkedin,
-    instagram,
+   
     twitter,
+    linkedin,
+    instagram
+
 
 } = req.body;
 // Build profile object
@@ -65,9 +70,10 @@ if(status) profileFields.status =status;
 
 // Build social object
 profileFields.social ={};
+if(twitter) profileFields.social.twitter = twitter;
+
 if(linkedin) profileFields.social.linkedin = linkedin;
 if(instagram) profileFields.social.instagram = instagram;
-if(twitter) profileFields.social.twitter = twitter;
 
 try{let profile = await Profile.findOne({ user: req.user.id});
 
@@ -137,12 +143,11 @@ if(!profile) return res.status(400).json({ msg: 'Profile not found'});
 
 router.delete('/', async(req,res)=>{
     try {
-        // @todo - remove users posts
-
+        await Post.deleteMany({ user: req.user.id});
         // Remove profile
-        const profiles = await Profile.findOneAndRemove({user: req.user.id});
+         await Profile.findOneAndRemove({user: req.user.id});
          //Remove user
-        const User = await User.findOneAndRemove({_id: req.user.id});
+        await User.findOneAndRemove({_id: req.user.id});
          
         res.json({msg: 'User deleted'});
     } catch (err) {
