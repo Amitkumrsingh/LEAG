@@ -1,0 +1,6 @@
+{
+    "mongoURI":"mongodb+srv://leag:inmhq33RlldRTZnp@leag.zwe6g.mongodb.net/?retryWrites=true&w=majority",
+    
+    "jwtSecret":"leagsecrettoken"
+    }
+     
