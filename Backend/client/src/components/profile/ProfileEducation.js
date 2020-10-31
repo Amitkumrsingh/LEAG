@@ -4,7 +4,7 @@ import Moment from 'react-moment';
 import moment from 'moment';
 
 const ProfileEducation = ({
-  education: { school, degree, fieldofstudy, to, from, description }
+  education: { school, degree, fieldofstudy, to, from }
 }) => (
   <div>
     <h3 className="text-dark">{school}</h3>
@@ -17,9 +17,6 @@ const ProfileEducation = ({
     </p>
     <p>
       <strong>Field Of Study: </strong> {fieldofstudy}
-    </p>
-    <p>
-      <strong>Description: </strong> {description}
     </p>
   </div>
 );

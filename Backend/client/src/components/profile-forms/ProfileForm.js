@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { createProfile, getCurrentProfile } from '../../actions/profile';
 
 const initialState = {
+ 
   location: '',
   status: '',
   bio: '',
@@ -40,6 +41,7 @@ const ProfileForm = ({
   }, [loading, getCurrentProfile, profile]);
 
   const {
+    
     location,
     status,
     bio,
@@ -66,7 +68,7 @@ const ProfileForm = ({
       <form className="form" onSubmit={onSubmit}>
         <div className="form-group">
           <select name="status" value={status} onChange={onChange}>
-            <option>* Select Professional Status</option>
+          <option>* Select Professional Status</option>
             <option value=" School Student"> School Student</option>
 			<option value="College Student ">College Student</option>
 			<option value="Instructor">Instructor or Teacher</option>
@@ -77,8 +79,8 @@ const ProfileForm = ({
             Give us an idea of where you are at in your career
           </small>
         </div>
-       
-       
+        
+          
         <div className="form-group">
           <input
             type="text"
@@ -92,6 +94,7 @@ const ProfileForm = ({
           </small>
         </div>
         
+       
         <div className="form-group">
           <textarea
             placeholder="A short bio of yourself"
@@ -125,6 +128,8 @@ const ProfileForm = ({
                 onChange={onChange}
               />
             </div>
+
+           
 
            
 

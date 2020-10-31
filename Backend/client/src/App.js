@@ -1,65 +1,45 @@
 import React, { Fragment, useEffect } from 'react';
-
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
 import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
-import Register from './components/auth/Register';
-import Login from './components/auth/Login';
-import Alert from './components/layout/Alert';
-import Dashboard from './components/dashboard/Dashboard';
-import {loadUser} from './actions/auth';
-import CreateProfile from './components/profile-forms/CreateProfile';
-import EditProfile from './components/profile-forms/EditProfile';
+import Routes from './components/routing/Routes';
+import { LOGOUT } from './actions/types';
 
-import AddEducation from './components/profile-forms/AddEducation';
-import Profiles from './components/profiles/Profiles';
-import Profile from './components/profile/Profile';
-
-import PrivateRoute from './components/routing/PrivateRoute';
 // Redux
-
-import{Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import store from './store';
-import './App.css';
+import { loadUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
-import './App.css'
 
-;
+import './App.css';
 
-if(localStorage.token){
-  setAuthToken(localStorage.token);
-}
-const App = () =>{
-  
-  useEffect(()=>{
-store.dispatch(loadUser());
-  },[]);
-  return ( 
-  <Provider store={store}>
-  <Router>
-    <Fragment>
-  <Navbar />
-  <Route exact path ='/' component={Landing} />
-  <section className="container">
-    <Alert/>
-    <Switch>
-<Route exact path ='/register' component ={Register} />
-<Route exact path ='/login' component ={Login} />
-<PrivateRoute exact path ='/Dashboard' component ={Dashboard} />
-<PrivateRoute exact path ='/CreateProfile' component ={CreateProfile} />
-<PrivateRoute exact path ='/edit-profile' component ={EditProfile} />
+const App = () => {
+  useEffect(() => {
+    // check for token in LS
+    if (localStorage.token) {
+      setAuthToken(localStorage.token);
+    }
+    store.dispatch(loadUser());
 
-<PrivateRoute exact path ='/add-education' component ={AddEducation} />
+    // log user out from all tabs if they log out in one tab
+    window.addEventListener('storage', () => {
+      if (!localStorage.token) store.dispatch({ type: LOGOUT });
+    });
+  }, []);
 
-<PrivateRoute exact path ='/profiles' component ={Profiles} />
-<PrivateRoute exact path ='/profile/:id' component ={Profile} />
-    </Switch>
-  </section>
-  
-      </Fragment>
+  return (
+    <Provider store={store}>
+      <Router>
+        <Fragment>
+          <Navbar />
+          <Switch>
+            <Route exact path="/" component={Landing} />
+            <Route component={Routes} />
+          </Switch>
+        </Fragment>
       </Router>
-      </Provider>
-  
-)};
+    </Provider>
+  );
+};
+
 export default App;

@@ -7,7 +7,7 @@ import {
   PROFILE_ERROR,
   UPDATE_PROFILE,
   CLEAR_PROFILE,
-  ACCOUNT_DELETED,
+  ACCOUNT_DELETED
 } from './types';
 
 // Get current users profile
@@ -64,7 +64,6 @@ export const getProfileById = userId => async dispatch => {
 };
 
 
-
 // Create or update profile
 export const createProfile = (
   formData,
@@ -99,7 +98,6 @@ export const createProfile = (
 };
 
 
-
 // Add Education
 export const addEducation = (formData, history) => async dispatch => {
   try {
@@ -126,7 +124,6 @@ export const addEducation = (formData, history) => async dispatch => {
     });
   }
 };
-
 
 
 // Delete education
