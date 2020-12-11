@@ -38,9 +38,7 @@ it  includes dictionary, user authentication, user profiles and community  posts
 ```bash
 cd client
 ```
-npm install
-
-[moment](https://www.npmjs.com/package/moment)
+npm install  [moment](https://www.npmjs.com/package/moment)
 [react](https://www.npmjs.com/package/react)
 [react-dom](https://www.npmjs.com/package/react-dom)
   [react-moment](https://www.npmjs.com/package/react-moment)
