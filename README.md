@@ -90,6 +90,4 @@ Check in browser on [http://localhost:5000/](http://localhost:5000/)
 
 1.0.0
 
-### License
 
-This project is licensed under the MIT License
