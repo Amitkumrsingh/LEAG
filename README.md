@@ -50,7 +50,11 @@ npm install  [moment](https://www.npmjs.com/package/moment)
     [redux-thunk](https://www.npmjs.com/package/redux-thunk)
     [uuid](https://www.npmjs.com/package/uuid)
 
+### Install dev dependencies
 
+npm install [concurrently](https://www.npmjs.com/package/concurrently)
+   [nodemon](https://www.npmjs.com/package/nodemon)
+   
 ### Run both Express & React from root
 
 ```bash
